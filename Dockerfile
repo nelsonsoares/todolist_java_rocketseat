@@ -1,18 +1,18 @@
 FROM ubuntu:latest AS build
 
-RUN sudo apt-get update
-RUN sudo add-apt-repository ppa:openjdk-r/ppa
+RUN pt-get update
+RUN add-apt-repository ppa:openjdk-r/ppa
 
-RUN sudo apt-get update
-RUN sudo apt-get install openjdk-21-jdk -y
+RUN apt-get update
+RUN apt-get install openjdk-21-jdk -y
 
-RUN sudo apt-get update
-RUN sudo apt-get install openjdk-21-jdk
-RUN sudo apt-get update
+RUN apt-get update
+RUN apt-get install openjdk-21-jdk
+RUN apt-get update
 
 COPY . .
 
-RUN sudo apt-get install maven -y
+RUN apt-get install maven -y
 RUN mvn clean install
 
 FROM openjdk:21-jdk-slim
