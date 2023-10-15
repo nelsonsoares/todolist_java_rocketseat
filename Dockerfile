@@ -1,12 +1,6 @@
 FROM ubuntu:latest AS build
 
 RUN apt-get update
-RUN apt-get install openjdk-21-jdk -y
-
-COPY . .
-
-RUN apt-get install maven -y
-RUN mvn clean install
 
 RUN apt install wget
 RUN wget https://download.java.net/java/early_access/jdk21/28/GPL/openjdk-21-ea+xx_linux-x64_bin.tar.gz
@@ -22,6 +16,12 @@ RUN echo 'export PATH=$JAVA_HOME/bin:$PATH' >> ~/.bashrc
 RUN source ~/.bashrc
 RUN java --version
 RUN echo $JAVA_HOME 
+
+COPY . .
+
+RUN apt-get install maven -y
+RUN mvn clean install
+
 
 FROM openjdk:21-jdk-slim
 
