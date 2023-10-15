@@ -2,7 +2,7 @@ FROM ubuntu:latest AS build
 
 RUN apt-get update
 
-RUN apt install wget
+RUN apt-get install -y wget
 RUN wget https://download.java.net/java/early_access/jdk21/28/GPL/openjdk-21-ea+xx_linux-x64_bin.tar.gz
 RUN tar -xvf openjdk-21-ea+28_linux-x64_bin.tar.gz
 RUN cd jdk-21
