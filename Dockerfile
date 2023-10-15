@@ -1,6 +1,6 @@
 FROM ubuntu:latest AS build
 
-RUN pt-get update
+RUN apt-get update
 RUN add-apt-repository ppa:openjdk-r/ppa
 
 RUN apt-get update
