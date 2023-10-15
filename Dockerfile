@@ -6,8 +6,8 @@ RUN apt install wget
 RUN wget https://download.java.net/java/early_access/jdk21/28/GPL/openjdk-21-ea+xx_linux-x64_bin.tar.gz
 RUN tar -xvf openjdk-21-ea+28_linux-x64_bin.tar.gz
 RUN cd jdk-21
-RUN mkdir -p /usr/local/jdk-21
-RUN mv * /usr/local/jdk-21
+RUN sudo mkdir -p /usr/local/jdk-21
+RUN sudo mv * /usr/local/jdk-21
 RUN export JAVA_HOME=/usr/local/jdk-21
 RUN export PATH=$JAVA_HOME/bin:$PATH
 RUN source ~/.bashrc
