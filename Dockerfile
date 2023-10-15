@@ -1,14 +1,14 @@
 FROM ubuntu:latest AS build
 
-RUN apt-get update
+RUN sudo apt-get update
 RUN sudo add-apt-repository ppa:openjdk-r/ppa
 
-RUN apt-get update
-RUN apt-get install openjdk-21-jdk -y
+RUN sudo apt-get update
+RUN sudo apt-get install openjdk-21-jdk -y
 
-RUN apt-get update
+RUN sudo apt-get update
 RUN sudo apt-get install openjdk-21-jdk
-RUN apt-get update
+RUN sudo apt-get update
 
 COPY . .
 
